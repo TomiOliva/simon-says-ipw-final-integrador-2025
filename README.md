@@ -1,8 +1,11 @@
-<<<<<<< HEAD
+
 # simon-says-ipw-final-integrador-2025
-SIMON SAYS 🎮 - Oliva, Tomás - Rago, Bruno| Trabajo Final Integrador para Introducción a la Programación Web (LGTI 2025). Implementado con HTML5, CSS3 (Flexbox) y JavaScript (ES5).
-=======
-# 🎮 Simon Says - Juego Online
+SIMON SAYS 🎮 
+
+=================================================================================================================================================================
+Oliva, Tomás - Rago, Bruno| Trabajo Final Integrador para Introducción a la Programación Web (LGTI 2025). Implementado con HTML5, CSS3 (Flexbox) y JavaScript (ES5).
+=================================================================================================================================================================
+
 
 Trabajo Final Integrador - Introducción a la Programación Web 2025
 
@@ -59,9 +62,9 @@ simon-says-game/
 ## 🔧 Instalación y Uso
 
 1. Clonar el repositorio:
-```bash
+
 git clone https://github.com/TomiOliva/simon-says-ipw-final-integrador-2025.git
-```
+
 
 2. Abrir `index.html` en el navegador
 
@@ -74,4 +77,3 @@ git clone https://github.com/TomiOliva/simon-says-ipw-final-integrador-2025.git
 
 ## 📄 Licencia
 Proyecto académico - IPW 2025
->>>>>>> d93e089 (Estructura inicial del proyecto con HTML base, README.md y git ignore)
