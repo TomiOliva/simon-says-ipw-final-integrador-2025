@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says - Juego Online</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="titulo-principal">Simon Says</h1>
+        <nav class="navegacion">
+            <a href="index.html" class="nav-link activo">Juego</a>
+            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="https://github.com/USUARIO/simon-says-game" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-principal">
+        <div id="modal-nombre" class="modal">
+            <div class="modal-contenido">
+                <h2>¡Bienvenido a Simon Says!</h2>
+                <p>Ingresa tu nombre para comenzar</p>
+                <input type="text" id="input-nombre" class="input-texto" placeholder="Mínimo 3 letras" maxlength="20">
+                <span id="error-nombre" class="mensaje-error oculto">El nombre debe tener al menos 3 letras</span>
+                <button id="btn-confirmar-nombre" class="boton boton-primario">Comenzar</button>
+            </div>
+        </div>
+
+        <section id="area-juego" class="area-juego oculto">
+            <div class="info-jugador">
+                <div class="info-item">
+                    <span class="etiqueta">Jugador:</span>
+                    <span id="nombre-jugador" class="valor">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="etiqueta">Nivel:</span>
+                    <span id="nivel-actual" class="valor">1</span>
+                </div>
+                <div class="info-item">
+                    <span class="etiqueta">Puntaje:</span>
+                    <span id="puntaje-actual" class="valor">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="etiqueta">Tiempo:</span>
+                    <span id="tiempo-transcurrido" class="valor">0s</span>
+                </div>
+            </div>
+
+            <div id="tablero-simon" class="tablero-simon">
+                <button id="btn-verde" class="boton-simon verde" data-color="verde" disabled></button>
+                <button id="btn-rojo" class="boton-simon rojo" data-color="rojo" disabled></button>
+                <button id="btn-amarillo" class="boton-simon amarillo" data-color="amarillo" disabled></button>
+                <button id="btn-azul" class="boton-simon azul" data-color="azul" disabled></button>
+                <div class="centro-tablero">
+                    <button id="btn-iniciar" class="boton boton-iniciar">Iniciar</button>
+                </div>
+            </div>
+
+            <div class="controles">
+                <button id="btn-ver-ranking" class="boton boton-secundario">Ver Ranking</button>
+            </div>
+        </section>
+
+        <div id="modal-game-over" class="modal oculto">
+            <div class="modal-contenido">
+                <h2>¡Juego Terminado!</h2>
+                <p class="mensaje-final">Secuencia incorrecta</p>
+                <div class="resultados-finales">
+                    <p><strong>Nivel alcanzado:</strong> <span id="nivel-final">0</span></p>
+                    <p><strong>Puntaje final:</strong> <span id="puntaje-final">0</span></p>
+                    <p><strong>Tiempo:</strong> <span id="tiempo-final">0</span>s</p>
+                </div>
+                <button id="btn-reiniciar" class="boton boton-primario">Jugar de Nuevo</button>
+            </div>
+        </div>
+
+        <div id="modal-ranking" class="modal oculto">
+            <div class="modal-contenido modal-grande">
+                <button id="btn-cerrar-ranking" class="btn-cerrar">&times;</button>
+                <h2>Ranking de Partidas</h2>
+                <div class="controles-ranking">
+                    <button id="btn-ordenar-puntaje" class="boton boton-pequeno activo">Por Puntaje</button>
+                    <button id="btn-ordenar-fecha" class="boton boton-pequeno">Por Fecha</button>
+                </div>
+                <div id="contenedor-ranking" class="contenedor-ranking">
+                    <p class="mensaje-vacio">No hay partidas registradas aún</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Trabajo Final - Introducción a la Programación Web 2025</p>
+    </footer>
+
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>
