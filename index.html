@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,83 +9,123 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="titulo-principal">Simon Says</h1>
-        <nav class="navegacion">
-            <a href="index.html" class="nav-link activo">Juego</a>
+        <h1 class="main-title">Simon Says</h1>
+        <nav class="navigation">
+            <a href="index.html" class="nav-link active">Juego</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
             <a href="https://github.com/USUARIO/simon-says-game" class="nav-link" target="_blank" rel="noopener">GitHub</a>
         </nav>
     </header>
 
-    <main class="contenedor-principal">
-        <div id="modal-nombre" class="modal">
-            <div class="modal-contenido">
+    <main class="main-container">
+        <div id="name-modal" class="modal">
+            <div class="modal-content">
                 <h2>¡Bienvenido a Simon Says!</h2>
                 <p>Ingresa tu nombre para comenzar</p>
-                <input type="text" id="input-nombre" class="input-texto" placeholder="Mínimo 3 letras" maxlength="20">
-                <span id="error-nombre" class="mensaje-error oculto">El nombre debe tener al menos 3 letras</span>
-                <button id="btn-confirmar-nombre" class="boton boton-primario">Comenzar ahora</button>
+                <input 
+                    type="text" 
+                    id="input-name" 
+                    class="text-input" 
+                    placeholder="Mínimo 3 letras" 
+                    maxlength="20"
+                >
+                <span id="name-error" class="error-message hidden">
+                    El nombre debe tener al menos 3 letras
+                </span>
+                <button id="btn-confirm-name" class="button button-primary">
+                    Comenzar ahora
+                </button>
             </div>
         </div>
 
-        <section id="area-juego" class="area-juego oculto">
-            <div class="info-jugador">
+        <section id="game-area" class="game-area hidden">
+            <div class="player-info">
                 <div class="info-item">
-                    <span class="etiqueta">Jugador:</span>
-                    <span id="nombre-jugador" class="valor">-</span>
+                    <span class="label-text">Jugador:</span>
+                    <span id="player-name" class="value">-</span>
                 </div>
                 <div class="info-item">
-                    <span class="etiqueta">Nivel:</span>
-                    <span id="nivel-actual" class="valor">1</span>
+                    <span class="label-text">Nivel:</span>
+                    <span id="current-level" class="value">1</span>
                 </div>
                 <div class="info-item">
-                    <span class="etiqueta">Puntaje:</span>
-                    <span id="puntaje-actual" class="valor">0</span>
+                    <span class="label-text">Puntaje:</span>
+                    <span id="current-score" class="value">0</span>
                 </div>
                 <div class="info-item">
-                    <span class="etiqueta">Tiempo:</span>
-                    <span id="tiempo-transcurrido" class="valor">0s</span>
+                    <span class="label-text">Tiempo:</span>
+                    <span id="elapsed-time" class="value">0s</span>
                 </div>
             </div>
 
-            <div id="tablero-simon" class="tablero-simon">
-                <button id="btn-verde" class="boton-simon verde" data-color="verde" disabled></button>
-                <button id="btn-rojo" class="boton-simon rojo" data-color="rojo" disabled></button>
-                <button id="btn-amarillo" class="boton-simon amarillo" data-color="amarillo" disabled></button>
-                <button id="btn-azul" class="boton-simon azul" data-color="azul" disabled></button>
-                <div class="centro-tablero">
-                    <button id="btn-iniciar" class="boton boton-iniciar">Iniciar</button>
+            <div id="simon-board" class="simon-board">
+                <button 
+                    id="btn-green" 
+                    class="simon-button green" 
+                    data-color="green" 
+                    disabled
+                ></button>
+                <button 
+                    id="btn-red" 
+                    class="simon-button red" 
+                    data-color="red" 
+                    disabled
+                ></button>
+                <button 
+                    id="btn-yellow" 
+                    class="simon-button yellow" 
+                    data-color="yellow" 
+                    disabled
+                ></button>
+                <button 
+                    id="btn-blue" 
+                    class="simon-button blue" 
+                    data-color="blue" 
+                    disabled
+                ></button>
+                <div class="board-center">
+                    <button id="btn-start" class="button button-start">
+                        Iniciar
+                    </button>
                 </div>
             </div>
 
-            <div class="controles">
-                <button id="btn-ver-ranking" class="boton boton-secundario">Ver Ranking</button>
+            <div class="controls">
+                <button id="btn-show-ranking" class="button button-secondary">
+                    Ver Ranking
+                </button>
             </div>
         </section>
 
-        <div id="modal-game-over" class="modal oculto">
-            <div class="modal-contenido">
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
                 <h2>¡Juego Terminado!</h2>
-                <p class="mensaje-final">Secuencia incorrecta</p>
-                <div class="resultados-finales">
-                    <p><strong>Nivel alcanzado:</strong> <span id="nivel-final">0</span></p>
-                    <p><strong>Puntaje final:</strong> <span id="puntaje-final">0</span></p>
-                    <p><strong>Tiempo:</strong> <span id="tiempo-final">0</span>s</p>
+                <p class="final-message">Secuencia incorrecta</p>
+                <div class="final-results">
+                    <p><strong>Nivel alcanzado:</strong> <span id="final-level">0</span></p>
+                    <p><strong>Puntaje final:</strong> <span id="final-score">0</span></p>
+                    <p><strong>Tiempo:</strong> <span id="final-time">0</span>s</p>
                 </div>
-                <button id="btn-reiniciar" class="boton boton-primario">Jugar de Nuevo</button>
+                <button id="btn-restart" class="button button-primary">
+                    Jugar de Nuevo
+                </button>
             </div>
         </div>
 
-        <div id="modal-ranking" class="modal oculto">
-            <div class="modal-contenido modal-grande">
-                <button id="btn-cerrar-ranking" class="btn-cerrar">&times;</button>
+        <div id="ranking-modal" class="modal hidden">
+            <div class="modal-content modal-large">
+                <button id="btn-close-ranking" class="btn-close">&times;</button>
                 <h2>Ranking de Partidas</h2>
-                <div class="controles-ranking">
-                    <button id="btn-ordenar-puntaje" class="boton boton-pequeno activo">Por Puntaje</button>
-                    <button id="btn-ordenar-fecha" class="boton boton-pequeno">Por Fecha</button>
+                <div class="ranking-controls">
+                    <button id="btn-sort-score" class="button button-small active">
+                        Por Puntaje
+                    </button>
+                    <button id="btn-sort-date" class="button button-small">
+                        Por Fecha
+                    </button>
                 </div>
-                <div id="contenedor-ranking" class="contenedor-ranking">
-                    <p class="mensaje-vacio">No hay partidas registradas aún</p>
+                <div id="ranking-container" class="ranking-container">
+                    <p class="empty-message">No hay partidas registradas aún</p>
                 </div>
             </div>
         </div>
