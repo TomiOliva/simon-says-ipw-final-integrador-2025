@@ -27,8 +27,15 @@ body {
     color: #9ca3af;
 }
 
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .form-group {
-    margin-bottom: 14px;
+    margin-bottom: 4px;
+    text-align: left;
 }
 
 .label {
@@ -47,6 +54,7 @@ body {
     background-color: #020617;
     color: #f9fafb;
     outline: none;
+    resize: vertical;
 }
 
 .input::placeholder {
@@ -57,6 +65,7 @@ body {
     border-color: #10b981;
 }
 
+/* Botón enviar */
 .button-submit {
     width: 100%;
     padding: 10px;
@@ -67,7 +76,7 @@ body {
     color: #022c22;
     border: none;
     cursor: pointer;
-    margin-top: 4px;
+    margin-top: 8px;
 }
 
 .button-submit:hover {
@@ -85,6 +94,21 @@ body {
     margin-top: 4px;
     font-size: 0.8rem;
     color: #f97373;
+}
+
+.input-invalid {
+    border-color: #f97373;
+}
+
+.project-note {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #d1d5db;
+    text-align: center;
+}
+
+.form-actions {
+    margin-top: 10px;
 }
 
 @media (max-width: 480px) {
