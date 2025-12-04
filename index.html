@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says - Juego Online</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="main-title">Simon Says</h1>
+
+        <h1 class="main-title">
+            <img src="img/favicon.png" alt="logo" class="logo-icon">
+            Simon Says
+        </h1>
+
         <nav class="navigation">
             <a href="index.html" class="nav-link active">Juego</a>
             <a href="contacto.html" class="nav-link">Contacto</a>
-            <a href="https://github.com/USUARIO/simon-says-game" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/TomiOliva/simon-says-ipw-final-integrador-2025.git" class="nav-link" target="_blank" rel="noopener">GitHub</a>
         </nav>
     </header>
 
@@ -59,44 +68,18 @@
             </div>
 
             <div id="simon-board" class="simon-board">
-                <button 
-                    id="btn-green" 
-                    class="simon-button green" 
-                    data-color="green" 
-                    disabled
-                ></button>
-                <button 
-                    id="btn-red" 
-                    class="simon-button red" 
-                    data-color="red" 
-                    disabled
-                ></button>
-                <button 
-                    id="btn-yellow" 
-                    class="simon-button yellow" 
-                    data-color="yellow" 
-                    disabled
-                ></button>
-                <button 
-                    id="btn-blue" 
-                    class="simon-button blue" 
-                    data-color="blue" 
-                    disabled
-                ></button>
+                <button id="btn-green" class="simon-button green" data-color="green" disabled></button>
+                <button id="btn-red" class="simon-button red" data-color="red" disabled></button>
+                <button id="btn-yellow" class="simon-button yellow" data-color="yellow" disabled></button>
+                <button id="btn-blue" class="simon-button blue" data-color="blue" disabled></button>
                 <div class="board-center">
-                    <button id="btn-start" class="button button-start">
-                        Iniciar
-                    </button>
+                    <button id="btn-start" class="button button-start">Iniciar</button>
                 </div>
             </div>
 
             <div class="controls">
-                <button id="btn-show-ranking" class="button button-secondary">
-                    Ver Ranking
-                </button>
-                <button id="btn-change-player" class="button button-secondary">
-                    Cambiar jugador
-                </button>
+                <button id="btn-show-ranking" class="button button-secondary">Ver Ranking</button>
+                <button id="btn-change-player" class="button button-secondary">Cambiar jugador</button>
             </div>
         </section>
 
@@ -109,9 +92,7 @@
                     <p><strong>Puntaje final:</strong> <span id="final-score">0</span></p>
                     <p><strong>Tiempo:</strong> <span id="final-time">0</span>s</p>
                 </div>
-                <button id="btn-restart" class="button button-primary">
-                    Jugar de Nuevo
-                </button>
+                <button id="btn-restart" class="button button-primary">Jugar de Nuevo</button>
             </div>
         </div>
 
@@ -120,12 +101,8 @@
                 <button id="btn-close-ranking" class="btn-close">&times;</button>
                 <h2>Ranking de Partidas</h2>
                 <div class="ranking-controls">
-                    <button id="btn-sort-score" class="button button-small active">
-                        Por Puntaje
-                    </button>
-                    <button id="btn-sort-date" class="button button-small">
-                        Por Fecha
-                    </button>
+                    <button id="btn-sort-score" class="button button-small active">Por Puntaje</button>
+                    <button id="btn-sort-date" class="button button-small">Por Fecha</button>
                 </div>
                 <div id="ranking-container" class="ranking-container">
                     <p class="empty-message">No hay partidas registradas aún</p>
