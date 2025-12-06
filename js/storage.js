@@ -1,25 +1,19 @@
 'use strict';
 
 var STORAGE_PLAYER_NAME_KEY = 'simonSaysPlayerName';
+var STORAGE_RESULTS_KEY = 'simonSaysResults';
 
 function savePlayerName(name) {
-    var value;
     try {
-        value = name || '';
-        localStorage.setItem(STORAGE_PLAYER_NAME_KEY, value);
+        localStorage.setItem(STORAGE_PLAYER_NAME_KEY, name || '');
     } catch (error) {
         return;
     }
 }
 
 function loadPlayerName() {
-    var stored;
     try {
-        stored = localStorage.getItem(STORAGE_PLAYER_NAME_KEY);
-        if (!stored) {
-            return '';
-        }
-        return stored;
+        return localStorage.getItem(STORAGE_PLAYER_NAME_KEY) || '';
     } catch (error) {
         return '';
     }
@@ -31,4 +25,43 @@ function clearPlayerName() {
     } catch (error) {
         return;
     }
+}
+
+function loadGameResults() {
+    var raw;
+    var parsed;
+    try {
+        raw = localStorage.getItem(STORAGE_RESULTS_KEY);
+        if (!raw) {
+            return [];
+        }
+        parsed = JSON.parse(raw);
+        if (!parsed || typeof parsed.length === 'undefined') {
+            return [];
+        }
+        return parsed;
+    } catch (error) {
+        return [];
+    }
+}
+
+function saveGameResults(results) {
+    if (!results) {
+        return;
+    }
+    try {
+        localStorage.setItem(STORAGE_RESULTS_KEY, JSON.stringify(results));
+    } catch (error) {
+        return;
+    }
+}
+
+function addGameResult(result) {
+    var results;
+    if (!result) {
+        return;
+    }
+    results = loadGameResults();
+    results.push(result);
+    saveGameResults(results);
 }

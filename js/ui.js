@@ -89,6 +89,23 @@ function onNameInput() {
     hideNameError();
 }
 
+function onChangePlayerClick(event) {
+    if (event && event.preventDefault) {
+        event.preventDefault();
+    }
+    playerName = '';
+    if (typeof clearPlayerName === 'function') {
+        clearPlayerName();
+    }
+    if (inputName) {
+        inputName.value = '';
+        inputName.focus();
+    }
+    hideNameError();
+    showElement(nameModal);
+    hideElement(gameArea);
+}
+
 function onConfirmNameClick(event) {
     var rawName;
     var trimmedName;
@@ -128,20 +145,3 @@ function initializeUI() {
 }
 
 initializeUI();
-
-function onChangePlayerClick(event) {
-    if (event && event.preventDefault) {
-        event.preventDefault();
-    }
-    playerName = '';
-    if (typeof clearPlayerName === 'function') {
-        clearPlayerName();
-    }
-    if (inputName) {
-        inputName.value = '';
-        inputName.focus();
-    }
-    hideNameError();
-    showElement(nameModal);
-    hideElement(gameArea);
-}

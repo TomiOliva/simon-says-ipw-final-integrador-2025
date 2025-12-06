@@ -5,26 +5,32 @@ body {
     color: #f3f4f6;
 }
 
-.contact-container {
-    max-width: 460px;
-    margin: 40px auto;
-    background-color: #111827;
-    padding: 18px 20px;
-    border-radius: 10px;
+.contact-main {
+    min-height: calc(100vh - 140px);
+    padding: 28px 24px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-card {
+    width: min(960px, 100%);
+    background-color: #0b1220;
     border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-.contact-container h2 {
+.contact-card h2 {
     margin: 0 0 8px;
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 1.6rem;
 }
 
-.contact-container p {
-    margin: 0 0 16px;
-    font-size: 0.9rem;
-    text-align: center;
-    color: #9ca3af;
+.contact-card .subtitle {
+    margin: 0 0 20px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    max-width: 760px;
 }
 
 .contact-form {
@@ -34,86 +40,92 @@ body {
 }
 
 .form-group {
-    margin-bottom: 4px;
-    text-align: left;
+    margin-bottom: 16px;
 }
 
-.label {
+.form-group label {
     display: block;
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #e5e7eb;
 }
 
-.input {
+.form-input,
+.form-textarea {
     width: 100%;
-    padding: 8px 10px;
-    font-size: 0.9rem;
-    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    border-radius: 6px;
     border: 1px solid #4b5563;
     background-color: #020617;
     color: #f9fafb;
     outline: none;
-    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input::placeholder {
+.form-input::placeholder,
+.form-textarea::placeholder {
     color: #6b7280;
 }
 
-.input:focus {
+.form-input:focus,
+.form-textarea:focus {
     border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
-/* Botón enviar */
-.button-submit {
-    width: 100%;
-    padding: 10px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    background-color: #10b981;
-    color: #022c22;
-    border: none;
-    cursor: pointer;
-    margin-top: 8px;
-}
-
-.button-submit:hover {
-    background-color: #059669;
-}
-
-.success-message {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #10b981;
-    text-align: center;
-}
-
-.error-message {
-    margin-top: 4px;
-    font-size: 0.8rem;
-    color: #f97373;
-}
-
-.input-invalid {
-    border-color: #f97373;
-}
-
-.project-note {
-    margin-top: 18px;
-    font-size: 0.85rem;
-    color: #d1d5db;
-    text-align: center;
+.form-textarea {
+    min-height: 140px;
+    resize: vertical;
 }
 
 .form-actions {
-    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
 }
 
-@media (max-width: 480px) {
-    .contact-container {
-        margin: 20px 10px;
-        padding: 16px;
+.form-error {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #f97373;
+}
+
+.form-success {
+    margin-top: 14px;
+    font-size: 0.95rem;
+    color: #10b981;
+    font-weight: 600;
+}
+
+.contact-extra {
+    margin-top: 24px;
+    padding: 14px 16px;
+    background-color: #0f172a;
+    border: 1px solid #1f2937;
+    border-radius: 10px;
+    color: #cbd5e1;
+}
+
+.contact-extra strong {
+    color: #f3f4f6;
+}
+
+@media (max-width: 768px) {
+    .contact-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    .contact-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .contact-card .subtitle {
+        font-size: 0.95rem;
     }
 }
