@@ -7,6 +7,7 @@ var nameError;
 var gameArea;
 var playerNameLabel;
 var btnChangePlayer;
+var btnCloseName;
 var playerName = '';
 
 function cacheDom() {
@@ -17,6 +18,7 @@ function cacheDom() {
     gameArea = document.getElementById('game-area');
     playerNameLabel = document.getElementById('player-name');
     btnChangePlayer = document.getElementById('btn-change-player');
+    btnCloseName = document.getElementById('btn-close-name');
 }
 
 function showElement(element) {
@@ -124,6 +126,18 @@ function onConfirmNameClick(event) {
     showElement(gameArea);
     setText(playerNameLabel, playerName);
     persistPlayerName();
+    if (typeof startGame === 'function') {
+        startGame();
+    }
+}
+
+function onCloseNameClick(event) {
+    if (event && event.preventDefault) {
+        event.preventDefault();
+    }
+    hideNameError();
+    hideElement(nameModal);
+    showElement(gameArea);
 }
 
 function attachEvents() {
@@ -135,6 +149,9 @@ function attachEvents() {
     }
     if (btnChangePlayer) {
         btnChangePlayer.addEventListener('click', onChangePlayerClick);
+    }
+    if (btnCloseName) {
+        btnCloseName.addEventListener('click', onCloseNameClick);
     }
 }
 

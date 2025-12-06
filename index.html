@@ -13,7 +13,6 @@
 </head>
 <body>
     <header class="header">
-
         <h1 class="main-title">
             <img src="img/favicon.png" alt="logo" class="logo-icon">
             Simon Says
@@ -29,13 +28,14 @@
     <main class="main-container">
         <div id="name-modal" class="modal">
             <div class="modal-content">
-                <h2>¡Bienvenido a Simon Says!</h2>
+                <button id="btn-close-name" class="btn-close" aria-label="Cerrar modal">&times;</button>
+                <h2>Bienvenido a Simon Says!</h2>
                 <p>Ingresa tu nombre para comenzar</p>
-                <input 
-                    type="text" 
-                    id="input-name" 
-                    class="text-input" 
-                    placeholder="Mínimo 3 letras" 
+                <input
+                    type="text"
+                    id="input-name"
+                    class="text-input"
+                    placeholder="Minimo 3 letras"
                     maxlength="20"
                 >
                 <span id="name-error" class="error-message hidden">
@@ -78,6 +78,7 @@
             </div>
 
             <div class="controls">
+                <button id="btn-reset-game" class="button button-secondary">Reiniciar juego</button>
                 <button id="btn-show-ranking" class="button button-secondary">Ver Ranking</button>
                 <button id="btn-change-player" class="button button-secondary">Cambiar jugador</button>
             </div>
@@ -85,14 +86,17 @@
 
         <div id="game-over-modal" class="modal hidden">
             <div class="modal-content">
-                <h2>¡Juego Terminado!</h2>
+                <h2>Juego Terminado!</h2>
                 <p class="final-message">Secuencia incorrecta</p>
                 <div class="final-results">
                     <p><strong>Nivel alcanzado:</strong> <span id="final-level">0</span></p>
+                    <p><strong>Puntaje inicial conseguido:</strong> <span id="initial-score">0</span></p>
+                    <p><strong>Penalizacion por tiempo (-1 cada 5s):</strong> -<span id="final-penalty">0</span></p>
                     <p><strong>Puntaje final:</strong> <span id="final-score">0</span></p>
-                    <p><strong>Tiempo:</strong> <span id="final-time">0</span>s</p>
+                    <p><strong>Tiempo:</strong> <span id="final-time">0s</span></p>
                 </div>
                 <button id="btn-restart" class="button button-primary">Jugar de Nuevo</button>
+                <button id="btn-exit" class="button button-secondary">Salir</button>
             </div>
         </div>
 
@@ -105,14 +109,14 @@
                     <button id="btn-sort-date" class="button button-small">Por Fecha</button>
                 </div>
                 <div id="ranking-container" class="ranking-container">
-                    <p class="empty-message">No hay partidas registradas aún</p>
+                    <p class="empty-message">No hay partidas registradas aun</p>
                 </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <p>Trabajo Final - Introducción a la Programación Web 2025</p>
+        <p>Trabajo Final - Introduccion a la Programacion Web 2025</p>
     </footer>
 
     <script src="js/storage.js"></script>
