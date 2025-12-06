@@ -29,6 +29,8 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     margin: 0;
+    display: flex;
+    align-items: center;
 }
 
 .navigation {
@@ -84,6 +86,7 @@ body {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    position: relative;
 }
 
 .modal-content h2 {
@@ -322,6 +325,33 @@ body {
     text-align: center;
 }
 
+/* Estilos de filas del ranking agregado */
+.ranking-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: #111827;
+    border: 1px solid #1f2937;
+}
+
+.ranking-player {
+    font-weight: 700;
+    color: #f9fafb;
+}
+
+.ranking-score {
+    font-weight: 600;
+    color: #10b981;
+}
+
+.ranking-info {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
 .footer {
     padding: 10px 20px;
     text-align: center;
@@ -334,6 +364,86 @@ body {
 .hidden {
     display: none !important;
 }
+
+/* Icono del título */
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border-radius: 6px;
+}
+
+/* ====== CONTACTO ====== */
+
+.contact-section {
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto;
+    background-color: #111827;
+    border-radius: 8px;
+    padding: 20px 24px;
+    border: 1px solid #1f2937;
+}
+
+.contact-section h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
+.contact-intro {
+    margin: 0 0 18px;
+    font-size: 0.95rem;
+    color: #d1d5db;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #e5e7eb;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #4b5563;
+    background-color: #020617;
+    color: #f9fafb;
+    font-size: 0.9rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #6b7280;
+}
+
+.form-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.project-note {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #d1d5db;
+    text-align: center;
+}
+
+/* ======================= */
 
 @media (max-width: 768px) {
     .header {
@@ -358,5 +468,14 @@ body {
 
     .info-item {
         flex: 1 1 100%;
+    }
+
+    .contact-section {
+        padding: 16px 14px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
