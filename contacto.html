@@ -31,26 +31,27 @@
         <section class="contact-container">
             <h2>Contacto</h2>
             <p>
-                ¿Tenés sugerencias, encontraste un error o querés dejar tu feedback sobre el juego?
-                Completá el formulario y te leemos.
+                Tenes sugerencias, encontraste un error o queres dejar tu feedback sobre el juego?
+                Completa el formulario y te leemos.
             </p>
 
+            <!-- Formulario con ids en ingles para JS -->
             <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
-                    <label for="nombre" class="label">Nombre</label>
+                    <label for="name" class="label">Nombre</label>
                     <input
                         type="text"
-                        id="nombre"
-                        name="nombre"
+                        id="name"
+                        name="name"
                         class="input"
                         placeholder="Tu nombre">
-                    <span id="nombre-error" class="error-message hidden">
-                        El nombre debe ser alfanumérico (letras y números).
+                    <span id="name-error" class="error-message hidden">
+                        El nombre debe ser alfanumerico (letras y numeros).
                     </span>
                 </div>
 
                 <div class="form-group">
-                    <label for="email" class="label">Correo electrónico</label>
+                    <label for="email" class="label">Correo electronico</label>
                     <input
                         type="email"
                         id="email"
@@ -58,30 +59,30 @@
                         class="input"
                         placeholder="ejemplo@correo.com">
                     <span id="email-error" class="error-message hidden">
-                        Ingresá un correo electrónico válido.
+                        Ingresa un correo electronico valido.
                     </span>
                 </div>
 
                 <div class="form-group">
-                    <label for="asunto" class="label">Asunto</label>
+                    <label for="subject" class="label">Asunto</label>
                     <input
                         type="text"
-                        id="asunto"
-                        name="asunto"
+                        id="subject"
+                        name="subject"
                         class="input"
                         placeholder="Tema del mensaje">
                 </div>
 
                 <div class="form-group">
-                    <label for="mensaje" class="label">Mensaje</label>
+                    <label for="message" class="label">Mensaje</label>
                     <textarea
-                        id="mensaje"
-                        name="mensaje"
+                        id="message"
+                        name="message"
                         class="input"
                         rows="4"
                         placeholder="Contanos tu comentario o sugerencia"></textarea>
-                    <span id="mensaje-error" class="error-message hidden">
-                        El mensaje debe tener más de 5 caracteres.
+                    <span id="message-error" class="error-message hidden">
+                        El mensaje debe tener mas de 5 caracteres.
                     </span>
                 </div>
 
@@ -95,13 +96,13 @@
             <p class="project-note">
                 Este formulario es parte del proyecto <strong>Simon Says</strong>,
                 desarrollado como trabajo final de la materia
-                <strong>Introducción a la Programación Web 2025</strong>.
+                <strong>Introduccion a la Programacion Web 2025</strong>.
             </p>
         </section>
     </main>
 
     <footer class="footer">
-        <p>Trabajo Final - Introducción a la Programación Web 2025</p>
+        <p>Trabajo Final - Introduccion a la Programacion Web 2025</p>
     </footer>
 
     <script src="js/form.js"></script>

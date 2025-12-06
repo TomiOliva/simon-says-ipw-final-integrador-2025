@@ -86,6 +86,7 @@ body {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    position: relative;
 }
 
 .modal-content h2 {
@@ -322,6 +323,33 @@ body {
     font-size: 0.9rem;
     color: #9ca3af;
     text-align: center;
+}
+
+/* Estilos de filas del ranking agregado */
+.ranking-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: #111827;
+    border: 1px solid #1f2937;
+}
+
+.ranking-player {
+    font-weight: 700;
+    color: #f9fafb;
+}
+
+.ranking-score {
+    font-weight: 600;
+    color: #10b981;
+}
+
+.ranking-info {
+    font-size: 0.85rem;
+    color: #9ca3af;
 }
 
 .footer {
