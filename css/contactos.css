@@ -33,6 +33,12 @@ body {
     max-width: 760px;
 }
 
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 .form-group {
     margin-bottom: 16px;
 }
