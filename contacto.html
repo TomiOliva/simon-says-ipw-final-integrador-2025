@@ -3,119 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Says - Contacto</title>
+    <title>Simon Says - Juego Online</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/contactos.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="main-title">Simon Says</h1>
+        <h1 class="main-title">
+            <img src="img/favicon.png" alt="logo" class="logo-icon">
+            Simon Says
+        </h1>
+
         <nav class="navigation">
             <a href="index.html" class="nav-link">Juego</a>
             <a href="contacto.html" class="nav-link active">Contacto</a>
-            <a href="https://github.com/USUARIO/simon-says-game" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://github.com/TomiOliva/simon-says-ipw-final-integrador-2025.git"
+               class="nav-link" target="_blank" rel="noopener">GitHub</a>
         </nav>
     </header>
 
-    <main class="contact-main">
-        <section class="contact-card">
+    <main class="main-container">
+        <section class="contact-container">
             <h2>Contacto</h2>
-            <p class="subtitle">
-                ¿Tenés sugerencias, encontraste un error o querés dejar tu feedback sobre el juego?
-                Completá el formulario y te leeremos.
+            <p>
+                Tenes sugerencias, encontraste un error o queres dejar tu feedback sobre el juego?
+                Completa el formulario y te leemos.
             </p>
 
-            <form id="contact-form" novalidate>
+            <!-- Formulario con ids en ingles para JS -->
+            <form id="contact-form" class="contact-form" novalidate>
                 <div class="form-group">
-                    <label for="contact-name">Nombre</label>
+                    <label for="name" class="label">Nombre</label>
                     <input
                         type="text"
-                        id="contact-name"
+                        id="name"
                         name="name"
-                        class="form-input"
-                        placeholder="Tu nombre"
-                        maxlength="40"
-                        required
-                    >
-                    <span id="error-name" class="form-error hidden">
-                        El nombre debe tener al menos 3 caracteres.
+                        class="input"
+                        placeholder="Tu nombre">
+                    <span id="name-error" class="error-message hidden">
+                        El nombre debe ser alfanumerico (letras y numeros).
                     </span>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact-email">Correo electrónico</label>
+                    <label for="email" class="label">Correo electronico</label>
                     <input
                         type="email"
-                        id="contact-email"
+                        id="email"
                         name="email"
-                        class="form-input"
-                        placeholder="ejemplo@correo.com"
-                        maxlength="60"
-                        required
-                    >
-                    <span id="error-email" class="form-error hidden">
-                        Ingresa un correo electrónico válido.
+                        class="input"
+                        placeholder="ejemplo@correo.com">
+                    <span id="email-error" class="error-message hidden">
+                        Ingresa un correo electronico valido.
                     </span>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact-subject">Asunto</label>
+                    <label for="subject" class="label">Asunto</label>
                     <input
                         type="text"
-                        id="contact-subject"
+                        id="subject"
                         name="subject"
-                        class="form-input"
-                        placeholder="Tema del mensaje"
-                        maxlength="60"
-                        required
-                    >
-                    <span id="error-subject" class="form-error hidden">
-                        El asunto debe tener al menos 5 caracteres.
-                    </span>
+                        class="input"
+                        placeholder="Tema del mensaje">
                 </div>
 
                 <div class="form-group">
-                    <label for="contact-message">Mensaje</label>
+                    <label for="message" class="label">Mensaje</label>
                     <textarea
-                        id="contact-message"
+                        id="message"
                         name="message"
-                        class="form-textarea"
-                        placeholder="Contanos tu comentario o sugerencia"
-                        maxlength="500"
-                        required
-                    ></textarea>
-                    <span id="error-message" class="form-error hidden">
-                        El mensaje debe tener al menos 10 caracteres.
+                        class="input"
+                        rows="4"
+                        placeholder="Contanos tu comentario o sugerencia"></textarea>
+                    <span id="message-error" class="error-message hidden">
+                        El mensaje debe tener mas de 5 caracteres.
                     </span>
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="button button-primary">
+                    <button type="submit" class="button-submit">
                         Enviar mensaje
                     </button>
-                    <button type="reset" class="button button-secondary">
-                        Limpiar
-                    </button>
                 </div>
-
-                <p id="form-success" class="form-success hidden">
-                    ¡Gracias por tu mensaje! Tu feedback sobre Simon Says fue enviado correctamente.
-                </p>
             </form>
 
-            <div class="contact-extra">
-                <p>
-                    Este formulario es parte del proyecto <strong>Simon Says</strong>,
-                    desarrollado como trabajo final de la materia
-                    <strong>Introducción a la Programación Web 2025</strong>.
-                </p>
-            </div>
+            <p class="project-note">
+                Este formulario es parte del proyecto <strong>Simon Says</strong>,
+                desarrollado como trabajo final de la materia
+                <strong>Introduccion a la Programacion Web 2025</strong>.
+            </p>
         </section>
     </main>
 
     <footer class="footer">
-        <p>Trabajo Final - Introducción a la Programación Web 2025</p>
+        <p>Trabajo Final - Introduccion a la Programacion Web 2025</p>
     </footer>
 
     <script src="js/form.js"></script>
