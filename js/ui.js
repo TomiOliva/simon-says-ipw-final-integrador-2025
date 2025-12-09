@@ -42,21 +42,33 @@ function setText(element, text) {
     element.textContent = text;
 }
 
-function isNameValid(value) {
+function getNameValidationError(value) {
     var cleaned;
+    var hasInvalidChars;
     var lettersOnly;
     if (!value) {
-        return false;
+        return 'El nombre debe tener al menos 3 letras';
     }
     cleaned = value.replace(/^\s+|\s+$/g, '');
-    lettersOnly = cleaned.replace(/[^a-zA-Z]/g, '');
-    if (lettersOnly.length < 3) {
-        return false;
+    hasInvalidChars = /[^a-zA-Z\u00f1\u00d1\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da\s]/.test(cleaned);
+    if (hasInvalidChars) {
+        return 'Solo se permiten caracteres alfabeticos';
     }
-    return true;
+    lettersOnly = cleaned.replace(/[^a-zA-Z\u00f1\u00d1\u00e1\u00e9\u00ed\u00f3\u00fa\u00c1\u00c9\u00cd\u00d3\u00da]/g, '');
+    if (lettersOnly.length < 3) {
+        return 'El nombre debe tener al menos 3 letras';
+    }
+    return '';
 }
 
-function showNameError() {
+function isNameValid(value) {
+    return getNameValidationError(value) === '';
+}
+
+function showNameError(message) {
+    if (nameError) {
+        nameError.textContent = message || 'El nombre debe tener al menos 3 letras';
+    }
     showElement(nameError);
 }
 
@@ -111,13 +123,15 @@ function onChangePlayerClick(event) {
 function onConfirmNameClick(event) {
     var rawName;
     var trimmedName;
+    var validationMessage;
     if (event && event.preventDefault) {
         event.preventDefault();
     }
     rawName = inputName.value;
     trimmedName = rawName.replace(/^\s+|\s+$/g, '');
-    if (!isNameValid(trimmedName)) {
-        showNameError();
+    validationMessage = getNameValidationError(trimmedName);
+    if (validationMessage) {
+        showNameError(validationMessage);
         return;
     }
     playerName = trimmedName;
