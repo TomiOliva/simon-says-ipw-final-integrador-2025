@@ -60,6 +60,12 @@ body {
     color: #022c22;
 }
 
+.nav-link.nav-link-disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .main-container {
     min-height: calc(100vh - 120px);
     padding: 20px;

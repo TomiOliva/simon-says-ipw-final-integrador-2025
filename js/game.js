@@ -12,6 +12,7 @@ var isPlayerTurn = false;
 var sortMode = 'score';
 
 var simonButtons = {};
+var navLinks;
 var btnStart;
 var btnRestart;
 var btnResetGame;
@@ -48,6 +49,7 @@ function cacheGameDom() {
     simonButtons.yellow = getElement('btn-yellow');
     simonButtons.blue = getElement('btn-blue');
     boardCenter = document.querySelector('.board-center');
+    navLinks = document.querySelectorAll('.nav-link');
 
     btnStart = getElement('btn-start');
     btnRestart = getElement('btn-restart');
@@ -115,6 +117,36 @@ function setButtonsEnabled(enabled) {
     for (color in simonButtons) {
         if (simonButtons.hasOwnProperty(color) && simonButtons[color]) {
             simonButtons[color].disabled = !enabled;
+        }
+    }
+}
+
+function preventNavClick(event) {
+    if (event && event.preventDefault) {
+        event.preventDefault();
+        event.stopPropagation();
+    }
+}
+
+function setNavLinksDisabled(disabled) {
+    var i;
+    if (!navLinks || !navLinks.length) {
+        return;
+    }
+    for (i = 0; i < navLinks.length; i++) {
+        if (!navLinks[i]) {
+            continue;
+        }
+        if (disabled) {
+            navLinks[i].classList.add('nav-link-disabled');
+            navLinks[i].setAttribute('aria-disabled', 'true');
+            navLinks[i].setAttribute('tabindex', '-1');
+            navLinks[i].addEventListener('click', preventNavClick);
+        } else {
+            navLinks[i].classList.remove('nav-link-disabled');
+            navLinks[i].removeAttribute('aria-disabled');
+            navLinks[i].removeAttribute('tabindex');
+            navLinks[i].removeEventListener('click', preventNavClick);
         }
     }
 }
@@ -228,6 +260,7 @@ function startGame(event) {
         requestPlayerName();
         return;
     }
+    setNavLinksDisabled(true);
     useHidden(boardCenter, true);
     useHidden(gameOverModal, true);
     resetGameState();
@@ -350,6 +383,7 @@ function handleGameOver(reason) {
     stopTimer();
     setButtonsEnabled(false);
     isPlayerTurn = false;
+    setNavLinksDisabled(false);
     finalScore = calculateFinalScore();
     updateFinalModal(finalScore, reason);
     saveResult(finalScore);
@@ -467,6 +501,7 @@ function exitGame(event) {
     }
     stopTimer();
     resetGameState();
+    setNavLinksDisabled(false);
     useHidden(boardCenter, false);
     useHidden(gameOverModal, true);
     setButtonsEnabled(false);
